@@ -42,10 +42,10 @@ Meteor.startup(function() {
             ]   
         });
         Environments.insert({
-            Name: "Server 2",
+            Name: "Slot 3",
             Tag: "QA Integration",
-            Uri: "http://testserver2.com",
-            Status: "Under Deployment",
+            Uri: "http://www.savolab3.com",
+            Status: "Ready",
             Applications: [
                 { 
                     Name: "Windows Vista",
@@ -80,25 +80,7 @@ Meteor.startup(function() {
                         Status: "Passed"
                     }]
                 },
-                { 
-                    Name: "Gmail",
-                    Version: "9.2",
-                    TestSuites : [{
-                        Name: "Unit Tests",
-                        Status: "Passed"
-                    }, {
-                        Name: "UAT",
-                        Status: "Passed"
-                    }],
-                    ResolvedIssues: [
-                        {
-                            Id: 123456,
-                            Title: "can't send email",
-                            AssignedTo: "stebe jorbs"
-                        }
-                    ]
-                }
-            ]
+        ]
         });
     }
 });

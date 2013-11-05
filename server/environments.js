@@ -19,6 +19,6 @@ Meteor.methods({
     addEnvironment: function(envName, tag, uri, envStatus) {
         console.log('adding environment ' + envName);
         Environments.insert({ Name: envName, Tag: tag, Uri: uri, Status: envStatus });
-    }
+    },
 });
 

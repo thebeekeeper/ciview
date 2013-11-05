@@ -77,9 +77,24 @@
 <template name="resolved_bugs">
 <div id="resolved">
     <h3>Resolved Defects - {{Name}}</h3>
-    {{#each bugs}}
-        <div>{{Title}}</div>
-    {{/each}}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Assginee</td>
+                <td>Title</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each bugs}}
+            <tr>
+            <td>{{Id}}</td>
+            <td>{{AssignedTo}}</td>
+            <td>{{Title}}</td>
+            {{/each}}
+    </tr>
+        </tbody>
+    </table>
 </div>
 </template>
 
