@@ -1,0 +1,65 @@
+<head>
+    <title>ciview</title>
+    <style type="text/css">
+        .env-link {
+            font-size: 24px;
+            margin: 10px 10px 10px 10px;
+            padding: 5px 5px 5px 5px;
+        }
+        .app {
+            background-color: #eee;
+		    margin: 10px 10px 10px 10px;
+    		padding: 0px 10px 15px 10px;
+        }
+        .selected {
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-unit">
+        <h1>laurus ciview</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                {{> env_list}}
+            </div>
+            <div class="span8">
+                {{> env_detail}}
+            </div>
+        </div>
+    </div>
+</body>
+
+<template name="env_list">
+<div id="env">
+    {{#each environment}}
+    <div class="env-link {{selected}}"><a href="/{{_id}}">{{Name}}</a></div>
+    {{/each}}
+</div>
+</template>
+
+<template name="env_detail">
+<div>
+    <h2>{{detail.Tag}}</h2>
+    <h3>{{detail.Status}}</h3>
+    <a href="{{detail.Uri}}">{{detail.Uri}}</a>
+    <div class="row">
+        {{#each detail.Applications}}
+            <div class="span3 app">
+                <h3>{{Name}}</h3>
+                <div>Version: {{Version}}</div>
+                <h4>Tests</h4>
+                {{#each TestSuites}}
+                    <div>
+                        {{Name}}
+                        <span class="label {{#toStatusClass Status}}{{/toStatusClass}}">{{Status}}</span>
+                    </div>
+                {{/each}}
+            </div>
+        {{/each}}
+    </div>
+</div>
+</template>
