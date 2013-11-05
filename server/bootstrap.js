@@ -89,7 +89,14 @@ Meteor.startup(function() {
                     }, {
                         Name: "UAT",
                         Status: "Passed"
-                    }]
+                    }],
+                    ResolvedIssues: [
+                        {
+                            Id: 123456,
+                            Title: "can't send email",
+                            AssignedTo: "stebe jorbs"
+                        }
+                    ]
                 }
             ]
         });

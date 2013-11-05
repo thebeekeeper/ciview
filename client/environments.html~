@@ -4,7 +4,7 @@
         .env-link {
             font-size: 24px;
             margin: 10px 10px 10px 10px;
-            padding: 5px 5px 5px 5px;
+            padding: 8px 8px 8px 8px;
         }
         .app {
             background-color: #eee;
@@ -13,6 +13,8 @@
         }
         .selected {
             background: #eee;
+        }
+        #resolved {
         }
     </style>
 </head>
@@ -28,6 +30,11 @@
             </div>
             <div class="span8">
                 {{> env_detail}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                {{> resolved_bugs}}
             </div>
         </div>
     </div>
@@ -49,7 +56,7 @@
     <div class="row">
         {{#each detail.Applications}}
             <div class="span3 app">
-                <h3>{{Name}}</h3>
+                <h3><a class="app-link {{selected}}" href="#">{{Name}}</a></h3>
                 <div>Version: {{Version}}</div>
                 <h4>Tests</h4>
                 {{#each TestSuites}}
@@ -63,3 +70,13 @@
     </div>
 </div>
 </template>
+
+<template name="resolved_bugs">
+<div id="resolved">
+    <h3>Resolved Defects - {{Name}}</h3>
+    {{#each bugs}}
+        <div>{{Title}}</div>
+    {{/each}}
+</div>
+</template>
+

@@ -12,3 +12,13 @@ Meteor.publish('env_detail', function(environment_id) {
     return env;
 });
 
+Meteor.methods({
+    testCall: function(testParam) {
+        console.log('got test call: ' + testParam);
+    },
+    addEnvironment: function(envName, tag, uri, envStatus) {
+        console.log('adding environment ' + envName);
+        Environments.insert({ Name: envName, Tag: tag, Uri: uri, Status: envStatus });
+    }
+});
+

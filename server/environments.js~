@@ -12,8 +12,19 @@ Meteor.publish('env_detail', function(environment_id) {
     return env;
 });
 
-Meteor.Router.add({
-    'test': function () {
-        console.log('hello from test');
+Meteor.methods({
+    testCall: function(testParam) {
+        console.log('got test call: ' + testParam);
+    },
+    addEnvironment: function(envName) {
+        console.log('adding environment ' + envName);
+        Environments.insert({ Name: envName });
+    },
+    setEnvironment: function(env) {
+        console.log('adding full environment');
+        Environments.insert(env);
     }
+
+
 });
+

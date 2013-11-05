@@ -5,7 +5,6 @@ Meteor.startup(function() {
             Tag: "Development Environment",
             Uri: "http://testserver1.com",
             Status: "Ready",
-            Selected: false,
             Applications: [
                 { 
                     Name: "Windows Vista",
@@ -47,7 +46,6 @@ Meteor.startup(function() {
             Tag: "QA Integration",
             Uri: "http://testserver2.com",
             Status: "Under Deployment",
-            Selected: false,
             Applications: [
                 { 
                     Name: "Windows Vista",
@@ -91,7 +89,12 @@ Meteor.startup(function() {
                     }, {
                         Name: "UAT",
                         Status: "Passed"
-                    }]
+                    }],
+                    ResolvedIssues: [
+                        Id: 123456,
+                        Title: "can't send email",
+                        AssignedTo: "stebe jorbs"
+                    ]
                 }
             ]
         });
