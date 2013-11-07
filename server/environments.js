@@ -22,3 +22,17 @@ Meteor.methods({
     },
 });
 
+Router.map(function() {
+	console.log('in Router.map');
+	this.route('serverRoute', {
+		where: 'server',
+		path: '/testRoute',
+		action: function() {
+			console.log('testRoute got called');
+			this.response.writeHead(200);
+			this.response.write('hello\n');
+			this.response.end();
+		}
+	});
+});
+

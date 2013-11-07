@@ -100,6 +100,7 @@ var EnvironmentsRouter = Backbone.Router.extend({
         ":environment_id": "main"
     },
     main: function (environment_id) {
+	console.log('changing environment');
         var oldEnv = Session.get("environment_id");
         if(oldEnv != environment_id) {
             Session.set("environment_id", environment_id);
